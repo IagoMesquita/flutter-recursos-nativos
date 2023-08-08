@@ -10,21 +10,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = ThemeData();
     return MaterialApp(
       title: 'Recursos Nativos',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.indigo,
-          accentColor: Colors.amber,
-        ).copyWith(),
-        visualDensity: VisualDensity.adaptivePlatformDensity
+      theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          primary: Colors.indigo,
+          secondary: Colors.amber
+        )
       ),
+      // theme: ThemeData(
+      //    primarySwatch: Colors.indigo,
+      //    accentColor: Colors.amber
+      // ),
       home: const PlacesListScreen(),
-      routes: {
+            routes: {
         AppRoutes.PLACE_FORM: (context) =>  const PlaceFormScreen(),
       },
     );
