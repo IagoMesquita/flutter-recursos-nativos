@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -12,8 +11,8 @@ class ImageInput extends StatefulWidget {
 }
 
 class _ImageInputState extends State<ImageInput> {
-  late File _storedImage;
-
+  File? _storedImage;
+  
   _takePicture() async {
     final ImagePicker _picker = ImagePicker();
     XFile imageFile = await _picker.pickImage(
@@ -46,7 +45,7 @@ class _ImageInputState extends State<ImageInput> {
           alignment: Alignment.center,
           child: _storedImage != null 
               ? Image.file(
-                  _storedImage,
+                  _storedImage!,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 )
