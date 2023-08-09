@@ -1,6 +1,7 @@
 import 'dart:io';
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:recusos_nativos/provider/great_places.dart';
 import 'package:recusos_nativos/widgets/image_input.dart';
 
 class PlaceFormScreen extends StatefulWidget {
@@ -21,7 +22,13 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
     });
   }
 
-  void _submitForm() {}
+  void _submitForm() {
+    if(_titleController.text.trim().isEmpty || _pickedImage == null) return;
+
+    Provider.of<GreatPlaces>(context, listen: false).addPlace(_titleController.text, _pickedImage);
+
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
