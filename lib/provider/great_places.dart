@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:recusos_nativos/utils/db_util.dart';
 
 import '../models/place.dart';
 
@@ -29,6 +30,11 @@ class GreatPlaces with ChangeNotifier {
     );
 
     _items.add(newPlace);
+    DbUtil.insert('place', {
+      'id': newPlace.id,
+      'title': newPlace.title,
+      'image': newPlace.image.path
+    });
     notifyListeners();
   }
 }
