@@ -6,6 +6,8 @@
         android:label="recusos_nativos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAci6nDrDyvpMlIljpRpuo4pcsHe3jDhtg" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
