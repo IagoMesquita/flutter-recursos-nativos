@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
+import 'package:recusos_nativos/screens/map_screen.dart';
 
 import '../utils/location_util.dart';
 
@@ -19,10 +20,19 @@ class _LocationInputState extends State<LocationInput> {
       latitude: locData.latitude!,
       longitude: locData.longitude!,
     );
-    
+
     setState(() {
       _previewImageUrl = staticMapImageUrl;
     });
+  }
+
+  Future<void> _selectOnMap() async {
+    final selectdLocation = await Navigator.of(context).push(MaterialPageRoute(
+      fullscreenDialog: true,
+      builder: (ctx) => const MapScreen(),
+    ));
+
+    print("Slected Location: $selectdLocation");
   }
 
   @override
@@ -58,7 +68,7 @@ class _LocationInputState extends State<LocationInput> {
               label: const Text('Localização Atual'),
             ),
             TextButton.icon(
-              onPressed: () {},
+              onPressed: _selectOnMap,
               icon: const Icon(Icons.map),
               label: const Text('Selecione no Mapa'),
             )
