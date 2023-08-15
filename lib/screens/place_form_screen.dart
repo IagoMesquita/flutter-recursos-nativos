@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +55,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
                     const SizedBox(height: 10),
                     ImageInput(onSelectImage: _selectImage),
                     const SizedBox(height: 10),
-                    LocationInput(),
+                    const LocationInput(),
                   ],
                 ),
               ),

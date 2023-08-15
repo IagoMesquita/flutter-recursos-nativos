@@ -25,7 +25,8 @@ class _ImageInputState extends State<ImageInput> {
       maxWidth: 600,
     ) as XFile;
 
-
+    print('IMAGE FILE: $imageFile');
+    print('IMAGE FILE: ${imageFile.path}');
     setState(() {
       _storedImage = File(imageFile.path);
     });

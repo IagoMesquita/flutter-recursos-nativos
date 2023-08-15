@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-const GOOGLE_API_KEY = '';
+const GOOGLE_API_KEY = 'AIzaSyAci6nDrDyvpMlIljpRpuo4pcsHe3jDhtg';
 
 class LocationUtil {
   static String generateLocationPreviewImage(
