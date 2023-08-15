@@ -27,12 +27,14 @@ class _LocationInputState extends State<LocationInput> {
   }
 
   Future<void> _selectOnMap() async {
-    final selectdLocation = await Navigator.of(context).push(MaterialPageRoute(
-      fullscreenDialog: true,
-      builder: (ctx) => const MapScreen(),
-    ));
+    final selectedLocation = await Navigator.of(context).push(
+      MaterialPageRoute(
+        fullscreenDialog: true,
+        builder: (ctx) => const MapScreen(),
+      ),
+    );
 
-    print("Slected Location: $selectdLocation");
+    print("Slected Location: $selectedLocation");
   }
 
   @override
